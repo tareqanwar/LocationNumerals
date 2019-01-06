@@ -49,5 +49,13 @@ class LocationNumeralsTest extends TestCase
         $abbreviated = $locationNumerals->getAbbreviatedLocationNumeral('abbc');
 
         $this->assertEquals($abbreviated, 'ad');
+
+        $abbreviated = $locationNumerals->getAbbreviatedLocationNumeral('addxxa');
+
+        $this->assertEquals($abbreviated, 'aeya');
+
+        $abbreviated = $locationNumerals->getAbbreviatedLocationNumeral('addzza');
+
+        $this->assertEquals($abbreviated, 'aezza');
     }
 }

@@ -55,7 +55,7 @@ class LocationNumerals
     public function getAbbreviatedLocationNumeral($locationNumeral) 
     {
         for ($i = 0; $i < strlen($locationNumeral) - 1; $i++){
-            if($locationNumeral[$i] === $locationNumeral[$i + 1]) {
+            if($locationNumeral[$i] === $locationNumeral[$i + 1] && $locationNumeral[$i] != 'z') {
                 $key = array_search($locationNumeral[$i], $this->alphabet);
                 $newLocationNumeral = str_replace($this->alphabet[$key] . $this->alphabet[$key] , $this->alphabet[$key + 1], $locationNumeral);
                 $locationNumeral = $this->getAbbreviatedLocationNumeral($newLocationNumeral);
