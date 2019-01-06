@@ -45,4 +45,23 @@ class LocationNumerals
 
         return $number;
     }
+
+    /**
+     * Returns abbreviated location numeral from extended form
+     * @param string $locationNumeral the extended location numeral
+     * @return string $abbreviatedLocationNumeral the abbreviated location numeral
+     * @access public 
+     */
+    public function getAbbreviatedLocationNumeral($locationNumeral) 
+    {
+        for ($i = 0; $i < strlen($locationNumeral) - 1; $i++){
+            if($locationNumeral[$i] === $locationNumeral[$i + 1]) {
+                $key = array_search($locationNumeral[$i], $this->alphabet);
+                $newLocationNumeral = str_replace($this->alphabet[$key] . $this->alphabet[$key] , $this->alphabet[$key + 1], $locationNumeral);
+                $locationNumeral = $this->getAbbreviatedLocationNumeral($newLocationNumeral);
+            }
+        }
+
+        return $locationNumeral;
+    }
 }
