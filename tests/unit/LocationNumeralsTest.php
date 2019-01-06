@@ -6,6 +6,14 @@
 
 use PHPUnit\Framework\TestCase;
 
-class LocationNumerals extends TestCase
+class LocationNumeralsTest extends TestCase
 {
+    public function testIntegerToLocationNumeral()
+    {
+        $locationNumerals = new LocationNumerals;
+
+        $locationNumeral = $locationNumerals->getLocationNumeral(9);
+
+        $this->assertEquals($locationNumeral, 'ad');
+    }
 }

@@ -5,4 +5,14 @@
  */
 class LocationNumerals
 {
+    /**
+     * Calculates and returns abbreviated location numeral for an integer
+     * @param int $int the integer for which we want location numeral
+     * @return string $str the abbreviated location numeral string
+     * @access public 
+     */
+    public function getLocationNumeral($int) 
+    {
+        return;
+    }
 }
