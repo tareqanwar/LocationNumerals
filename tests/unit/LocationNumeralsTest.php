@@ -24,4 +24,13 @@ class LocationNumeralsTest extends TestCase
 
         $this->assertEquals($locationNumeral, 'abdgkl');
     }
+
+    public function testLocationNumeralToInteger()
+    {
+        $locationNumerals = new LocationNumerals;
+
+        $number = $locationNumerals->getLocationNumeralInteger('ad');
+
+        $this->assertEquals($number, 9);
+    }
 }
