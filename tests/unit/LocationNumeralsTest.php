@@ -32,5 +32,13 @@ class LocationNumeralsTest extends TestCase
         $number = $locationNumerals->getLocationNumeralInteger('ad');
 
         $this->assertEquals($number, 9);
+
+        $number = $locationNumerals->getLocationNumeralInteger('abceg');
+
+        $this->assertEquals($number, 87);
+
+        $number = $locationNumerals->getLocationNumeralInteger('abdgkl');
+
+        $this->assertEquals($number, 3147);
     }
 }
